@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>On-screen calculator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="calculator">
+
+        <div id="display"></div>
+        <div id="keyboard">
+           <button class="number">0</button>
+            <button class="number">1</button>
+            <button class="number">2</button>
+            <button class="number">3</button>
+            <button class="number">4</button>
+            <button class="number">5</button>
+            <button class="number">6</button>
+            <button class="number">7</button>
+            <button class="number">8</button>
+            <button class="number">9</button>
+            <button class="operator">+</button>
+            <button class="operator">-</button>
+            <button class="operator">*</button>
+            <button class="operator">/</button>
+            <button id="equals">=</button>
+            <button class="operator">C</button>
+        </div>
+    </div>
+    
+</body>
+<script> 
+    let a;
+    let b;
+    let operator;
+    let num1;
+    let num2;
+    let display = document.querySelector('#display');
+    let numButtons = document.querySelectorAll('button');
+    let evaluation = document.querySelector('#equals');
+    
+  
+   numButtons.forEach((button) =>{
+        button.addEventListener('click', () =>
+        {     
+            let numDisplayValue = document.createElement('p');
+            numDisplayValue.textContent = button.innerHTML;
+            display.appendChild(numDisplayValue);
+            return display;
+           
+
+        
+        });});
+//evaluation.addEventListener('click', alert(operate('+', x, x)));
+
+
+    function sum(a, b) {
+        return a + b;
+    };
+
+    function subtract(a,b) {
+        return a - b;
+    };
+  
+    function multiply(a,b) {
+        return a * b;
+    };
+   
+    function divide(a,b) {
+        return a / b;
+    };
+  
+    function operate(operator, num1, num2) {
+        if(operator == '+') 
+        {
+            return sum(num1, num2);
+        }
+        else if(operator == '-') 
+        {
+            return subtract(num1, num2);
+        }
+        else if(operator == '*')
+        {
+            return multiply(num1, num2);
+        }
+        else
+        {
+            return divide(num1, num2);
+        }
+    };
+ 
+  
+
+
+</script>
+</body>
+</html> 
+
